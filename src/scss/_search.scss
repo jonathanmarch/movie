@@ -1,0 +1,46 @@
+.search {
+  @include container(90em);
+  overflow: hidden;
+  margin-top: 15px;
+
+  &__input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    padding: 4px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__results {
+    @include container(90em);
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+    width: 90em;
+  }
+
+  &__item {
+    font-size: 1.3em;
+    padding: 5px;
+    @include susy-clearfix;
+
+    &:hover {
+      background-color: lighten(silver, 22%);
+    }
+
+    &__title {
+      float: left;
+    }
+
+    &__release {
+      float: right;
+      font-size: 0.7em;
+    }
+  }
+
+
+}

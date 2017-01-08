@@ -1,0 +1,14 @@
+.sitenav {
+  background-color: #4c6575;
+  overflow: hidden;
+
+  &__container {
+    @include container(90em);
+  }
+
+  &__logo {
+    font-size:1.8em;
+    color: white;
+    margin: 20px 0px;
+  }
+}

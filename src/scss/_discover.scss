@@ -1,0 +1,27 @@
+.discover {
+  @include container(90em);
+  overflow: hidden;
+  margin-top: 25px;
+
+  &__filters {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  &__movie {
+    @include gallery(2 of 10);
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    &__title {
+      font-size: 0.9em;
+      margin-top: 7px;
+      text-align: center;
+    }
+  }
+
+  &__movie img {
+    height: 350px;
+    width: 100%;
+  }
+}
