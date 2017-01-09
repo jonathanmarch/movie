@@ -9,8 +9,8 @@ import {fetchPopularMovies} from '../../actions/discover/popular';
 import * as views from '../../constants/views';
 
 class Discover extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   componentWillMount() {
@@ -28,7 +28,7 @@ class Discover extends Component {
       dispatch(fetchPopularMovies());
     }
   }
-
+  
   render () {
     return (
       <div>
@@ -38,7 +38,7 @@ class Discover extends Component {
         </div>
         <div className="discover">
         {this.props.discover.movies.map(movie => (
-          <Movie key={movie.id} movie={movie}/>
+          <Movie key={movie.id} movie={movie} />
         ))}
         </div>
       </div>

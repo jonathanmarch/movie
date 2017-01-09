@@ -12,6 +12,7 @@
     @include gallery(2 of 10);
     overflow: hidden;
     margin-bottom: 20px;
+    cursor: pointer;
 
     &__title {
       font-size: 0.9em;
