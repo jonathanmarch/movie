@@ -71,13 +71,13 @@ describe('actions', () => {
   });
 
   it('should execute fetch search results', (done) => {
-    fetchMock.get(API_SEARCH, {results: [1,2,3]});
-
     const query = 'test';
     const expectedActions = [
       {type: types.FETCH_SEARCH_RESULTS_REQUEST},
       {type: types.FETCH_SEARCH_RESULTS_SUCCESS, payload: [1,2,3]}
     ];
+
+    fetchMock.get(`${API_SEARCH}&query=${query}`, {results: [1,2,3]});
 
     const store = mockStore({});
 
@@ -90,14 +90,14 @@ describe('actions', () => {
   });
 
   it('should execute fetch search results failure', (done) => {
-    fetchMock.get(API_SEARCH, {status: 404, body: {}});
-
     const query = 'test';
     const ex = new Error('Not Found');
     const expectedActions = [
       {type: types.FETCH_SEARCH_RESULTS_REQUEST},
       {type: types.FETCH_SEARCH_RESULTS_FAILURE, ex}
     ];
+
+    fetchMock.get(`${API_SEARCH}&query=${query}`, {status: 404, body: {}});
 
     const store = mockStore({});
 
