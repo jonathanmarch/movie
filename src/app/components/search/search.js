@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {updateSearchQuery, fetchSearchResults} from '../../actions/search';
+import {updateSearchQuery, clearSearchResults, fetchSearchResults} from '../../actions/search';
 
 import SearchResult from './searchresult';
 
@@ -19,6 +19,8 @@ class Search extends Component {
 
       if (value.length > 3) {
         dispatch(fetchSearchResults(value));
+      } else {
+        dispatch(clearSearchResults());
       }
 
     }, 500);
@@ -33,11 +35,11 @@ class Search extends Component {
       <div>
         <div className="search">
           <input type="text" className="search__input" placeholder="Search for a movie..." onChange={this.onChange.bind(this)}></input>
-          <div className="search__results">
+          {this.props.search.searchResults && <div className="search__results">
             {this.props.search.searchResults.map(movie => (
               <SearchResult key={movie.id} movie={movie}/>
             ))}
-          </div>
+          </div>}
         </div>
       </div>
     )

@@ -9,6 +9,12 @@ export function updateSearchQuery(query) {
   }
 }
 
+export function clearSearchResults() {
+  return {
+    type: actions.CLEAR_SEARCH_RESULTS
+  }
+}
+
 export function fetchSearchResultsRequest() {
   return {
     type: actions.FETCH_SEARCH_RESULTS_REQUEST

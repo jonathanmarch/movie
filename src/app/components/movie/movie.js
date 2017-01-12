@@ -1,21 +1,39 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-export default class Movie extends Component {
+
+import {fetchMovieInformation} from '../../actions/movie';
+
+import Header from './header';
+
+class Movie extends Component {
   constructor() {
     super();
   }
 
   componentDidMount() {
-    var id = this.props.params.id;
-    console.log('test');
-    console.log(id);
+    const { dispatch } = this.props;
+    const id = this.props.params.id;
+    dispatch(fetchMovieInformation(id));
   }
 
   render () {
-    return (
-      <div>
-      test
-      </div>
-    )
+    if (this.props.movie.fetchedInformation) {
+      return (
+        <div>
+          <Header info={this.props.movie.information} />
+        </div>
+      )
+    } else {
+      return <div>loading..</div>
+    }
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    movie: state.movie
+  }
+};
+
+export default connect(mapStateToProps)(Movie);

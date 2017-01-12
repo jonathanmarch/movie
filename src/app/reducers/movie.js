@@ -2,37 +2,28 @@ import * as actions from '../constants/actions';
 
 const initialState = {
   isFetching: false,
-  query: '',
-  searchResults: []
+  fetchedInformation: false,
+  information: null
 };
 
 const search = (state=initialState, action) => {
   switch (action.type) {
 
-    case actions.UPDATE_SEARCH_QUERY:
-      return Object.assign({}, state, {
-        query: action.payload
-      });
-
-    case actions.CLEAR_SEARCH_RESULTS:
-      return Object.assign({}, state, {
-        searchResults: []
-      });
-
-    case actions.FETCH_SEARCH_RESULTS_REQUEST:
+    case actions.FETCH_MOVIE_INFORMATION_REQUEST:
       return Object.assign({}, state, {
         isFetching: true
       });
 
-    case actions.FETCH_SEARCH_RESULTS_FAILURE:
+    case actions.FETCH_MOVIE_INFORMATION_FAILURE:
       return Object.assign({}, state, {
         isFetching: false
       });
 
-    case actions.FETCH_SEARCH_RESULTS_SUCCESS:
+    case actions.FETCH_MOVIE_INFORMATION_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
-        searchResults: action.payload
+        fetchedInformation: true,
+        information: action.payload
       });
 
     default:

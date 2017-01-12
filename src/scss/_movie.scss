@@ -1,0 +1,9 @@
+.movie {
+
+  &__header {
+    @include container(90em);
+    overflow: hidden;
+    margin-top: 25px;
+  }
+
+}
