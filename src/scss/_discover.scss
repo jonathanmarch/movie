@@ -24,5 +24,10 @@
   &__movie img {
     height: 350px;
     width: 100%;
+
+    &:hover {
+      -webkit-filter: brightness(70%);
+      transition: all 1s ease;
+    }
   }
 }
