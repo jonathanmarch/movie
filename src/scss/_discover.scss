@@ -9,7 +9,14 @@
   }
 
   &__movie {
-    @include gallery(2 of 10);
+    @include breakpoint($tablet) {
+      @include gallery(5 of 10);
+    }
+
+    @include breakpoint($desktop) {
+      @include gallery(2 of 10);
+    }
+
     overflow: hidden;
     margin-bottom: 20px;
     cursor: pointer;
@@ -22,8 +29,16 @@
   }
 
   &__movie img {
-    height: 350px;
+    height: 450px;
     width: 100%;
+
+    @include breakpoint($tablet) {
+      height: 450px;
+    }
+
+    @include breakpoint($desktop) {
+      height: 350px;
+    }
 
     &:hover {
       -webkit-filter: brightness(70%);

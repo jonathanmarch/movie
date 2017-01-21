@@ -10,5 +10,10 @@
     font-size:1.8em;
     color: white;
     margin: 20px 0px;
+    padding-left: 20px;
+
+    @include breakpoint($desktop) {
+      padding-left: 0px;
+    }
   }
 }

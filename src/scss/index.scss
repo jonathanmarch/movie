@@ -1,6 +1,10 @@
 @import '~susy/sass/susy';
 @import '~breakpoint-sass/stylesheets/breakpoint';
 
+$mobile: max-width 768px;
+$tablet: 769px 1024px;
+$desktop: 1025px;
+
 @import 'sitenav';
 @import 'discover';
 @import 'search';
