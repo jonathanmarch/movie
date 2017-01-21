@@ -24,6 +24,24 @@ class Search extends Component {
       }
 
     }, 500);
+
+    document.body.addEventListener('click', this.onClick.bind(this));
+  }
+
+  componentWillUnmount () {
+    const { dispatch } = this.props;
+    dispatch(clearSearchResults());
+
+    document.body.removeEventListener('click', this.onClick.bind(this));
+  }
+
+  onClick(event) {
+    const { dispatch } = this.props;
+    const className = event.target.className;
+
+    if (className.indexOf('search__') === -1) {
+      dispatch(clearSearchResults());
+    }
   }
 
   onChange(event) {
