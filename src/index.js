@@ -21,6 +21,8 @@ import './scss/index.scss';
 
 let middleware = [thunk];
 
+console.log(process.env.NODE_ENV);
+
 if (process.env.NODE_ENV !== 'production') {
   const createLogger = require(`redux-logger`);
   const logger = createLogger();
