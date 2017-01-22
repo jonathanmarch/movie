@@ -12,7 +12,7 @@ function ShowTrailers(props){
   )
 }
 
-export default class Trailers extends Component {
+export default class Media extends Component {
   render() {
     let trailers = null;
 

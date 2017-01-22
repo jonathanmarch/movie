@@ -10,7 +10,7 @@ export default class Header extends Component {
         </div>
 
         <div className="movie__header__info">
-          <h1>{this.props.info.title} ({this.props.info.release_date.split('-')[0]})</h1>
+          <h1>{this.props.info.title} ({this.props.info.release_date.split('-')[0]}) <span className="movie__header__rating">&#9733; {this.props.info.vote_average}</span></h1>
           <h2>Overview</h2>
           <p>{this.props.info.overview}</p>
           <h3>Genres</h3>
@@ -20,15 +20,24 @@ export default class Header extends Component {
               <li key={genre.id}>{genre.name}</li>
             ))}
           </ul>
-        }
+          }
+
           <h2>Facts</h2>
-          <div>
+
+          <div className="movie__header__facts__left">
             <h4>Status</h4>
             {this.props.info.status}
             <h4>Homepage</h4>
-            <a href={this.props.info.homepage}>{this.props.info.homepage}</a>
-            <h4>Runtime</h4>
-            {this.props.info.runtime}
+            <a href={this.props.info.homepage} target="_blank">{this.props.info.homepage}</a>
+            <h4>Budget</h4>
+            <span>${this.props.info.budget.toLocaleString()}</span>
+          </div>
+
+          <div className="movie__header__facts__right">
+            <h4>Cast</h4>
+            {this.props.info.credits.cast.slice(0, 10).map(cast => (
+              <div key={cast.cast_id}>{cast.name}</div>
+            ))}
           </div>
         </div>
 
