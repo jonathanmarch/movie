@@ -6,6 +6,7 @@ import {fetchMovieInformation} from '../../actions/movie';
 
 import Header from './header';
 import Trailers from './trailers';
+import Media from './media';
 
 class Movie extends Component {
   constructor() {
@@ -24,6 +25,7 @@ class Movie extends Component {
         <div>
           <Header info={this.props.movie.information} />
           <Trailers trailers={this.props.movie.information.videos.results} />
+          <Media media={this.props.movie.information.images} />
         </div>
       )
     } else {

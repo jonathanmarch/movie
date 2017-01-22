@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 
-function ShowTrailers(props){
+function ShowMedia(props){
   return (
-    <div className="movie__trailers__container">
-      {props.trailers.map(video => (
-        <div className="movie__trailers__video" key={video.id}>
-          <iframe width="600" height="350" src={"https://www.youtube.com/embed/" + video.key + "?modestbranding=1"} frameBorder="0" allowFullScreen></iframe>
-        </div>
+    <div className="movie__media__container">
+      {props.media.map((media, index) => (
+        <img key={index} src={"https://image.tmdb.org/t/p/w500/" + media.file_path} />
       ))}
     </div>
   )
@@ -14,19 +12,19 @@ function ShowTrailers(props){
 
 export default class Media extends Component {
   render() {
-    let trailers = null;
+    let media = null;
 
-    if (this.props.trailers.length) {
-      trailers = <ShowTrailers trailers={this.props.trailers} />;
+    if (this.props.media.backdrops) {
+      media = <ShowMedia media={this.props.media.backdrops} />
     } else {
-      trailers = <h3>Sorry there is currently no trailers for this movie.</h3>;
+      media = <h3>Sorry there is currently no media for this movie.</h3>;
     }
 
     return (
-      <div className="movie__trailers">
-        <div className="movie__trailers__content">
-          <h1>Trailers</h1>
-          {trailers}
+      <div className="movie__media">
+        <div className="movie__media__content">
+          <h1>Media</h1>
+          {media}
         </div>
       </div>
     )

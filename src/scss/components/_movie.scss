@@ -47,12 +47,34 @@
       display: flex;
       flex-direction: row;
       overflow-x: auto;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
 
     &__video {
       margin-right: 10px;
     }
+  }
+
+  &__media {
+    margin-top: 50px;
+    padding: 15px 0px 50px 0px;
+
+    &__content {
+      @include container(90em);
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 15px;
+    }
+
+    img {
+      float: left;
+      margin-right: 10px;
+    }
+
   }
 
 }
