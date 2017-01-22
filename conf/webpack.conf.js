@@ -50,7 +50,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   postcss: () => [autoprefixer],
-  debug: true,
   devtool: 'source-map',
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),

@@ -5,10 +5,11 @@ $mobile: max-width 768px;
 $tablet: 769px 1024px;
 $desktop: 1025px;
 
-@import 'sitenav';
-@import 'discover';
-@import 'search';
-@import 'movie';
+@import 'components/sitenav';
+@import 'components/discover';
+@import 'components/search';
+@import 'components/movie';
+@import 'components/footer';
 
 html, body, #root {
   margin: 0;
