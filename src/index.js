@@ -18,6 +18,7 @@ import Movie from './app/components/movie/movie';
 import reducers from './app/reducers';
 
 import './scss/index.scss';
+import 'baguettebox.js/dist/baguetteBox.min.css';
 
 let middleware = [thunk];
 
