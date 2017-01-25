@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "baguettebox.js": "^1.8.1",
     "breakpoint-sass": "^2.7.0",
     "es6-promise": "^4.0.5",
     "isomorphic-fetch": "^2.2.1",
