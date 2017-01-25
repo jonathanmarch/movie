@@ -18,6 +18,10 @@ export default class Media extends Component {
     baguetteBox.run('.backdrops');
   }
 
+  componentWillUnmount() {
+    baguetteBox.destory();
+  }
+
   render() {
     let media = null;
 
