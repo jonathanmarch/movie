@@ -2,11 +2,21 @@ import React, {Component} from 'react';
 
 export default class Header extends Component {
   render() {
+
+    let image = null;
+
+    if (this.props.info.poster_path) {
+      image = <img src={"https://image.tmdb.org/t/p/w300/" + this.props.info.poster_path} />
+    }
+    else {
+      image = <img src="http://placehold.it/300x450?text=No%20Image" />
+    }
+
     return (
       <div className="movie__header">
 
         <div className="movie__header__poster">
-          <img src={"https://image.tmdb.org/t/p/w300_and_h450_bestv2/" + this.props.info.poster_path} />
+          {image}
         </div>
 
         <div className="movie__header__info">
