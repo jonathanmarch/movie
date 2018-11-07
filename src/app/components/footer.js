@@ -6,7 +6,7 @@ export class Footer extends Component {
       <footer className="footer">
         <div className="footer__content">
           <a href="https://www.themoviedb.org/" target="_blank">
-            <img src="https://www.themoviedb.org/assets/static_cache/9b3f9c24d9fd5f297ae433eb33d93514/images/v4/logos/408x161-powered-by-rectangle-green.png" />
+            <img src="https://www.themoviedb.org/assets/1/v4/logos/408x161-powered-by-rectangle-green-bb4301c10ddc749b4e79463811a68afebeae66ef43d17bcfd8ff0e60ded7ce99.png" />
           </a>
         </div>
       </footer>
