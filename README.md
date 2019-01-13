@@ -8,4 +8,4 @@ Movie Trailers WebApp built with React Redux and ES6 fetch
 
 `gulp serve`
 
-Visit development URL
+Visit local development URL: http://localhost:3000
