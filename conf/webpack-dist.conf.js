@@ -26,8 +26,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        fallbackLoader: 'style',
-        loader: 'css?minimize!postcss!sass'
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.js$/,
@@ -50,8 +49,8 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
     }),
-    new ExtractTextPlugin('index-[contenthash].css'),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'})
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
+    new ExtractTextPlugin('style.css')
   ],
   postcss: () => [autoprefixer],
   output: {
