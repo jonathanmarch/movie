@@ -9,6 +9,9 @@
   }
 
   &__movie {
+    @media only screen and (max-width: 767px) {
+      padding: 0.5rem;
+    }
     @include breakpoint($tablet) {
       @include gallery(5 of 10);
     }

@@ -5,7 +5,7 @@ function ShowMedia(props){
   return (
     <div className="movie__media__container backdrops">
       {props.media.map((media, index) => (
-        <a key={index} href={"https://image.tmdb.org/t/p/w1920/" + media.file_path}>
+        <a key={index} href={"https://image.tmdb.org/t/p/w1280/" + media.file_path}>
           <img src={"https://image.tmdb.org/t/p/w500/" + media.file_path} />
         </a>
       ))}

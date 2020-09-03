@@ -3,7 +3,11 @@
   &__header {
     @include container(90em);
     overflow: hidden;
-    margin-top: 50px;
+    @include container(90em);
+
+    @media only screen and (min-width: 768px) {
+      margin-top: 50px;
+    }
 
     &__rating {
       position: relative;
@@ -17,11 +21,27 @@
     }
 
     &__poster {
-      @include span(3 of 12);
+      @media only screen and (min-width: 768px) {
+        @include span(3 of 12);
+      }
+
+      @media only screen and (max-width: 767px) {
+        width:100%;
+
+        img {
+          width: 100%;
+        }
+      }
     }
 
     &__info {
-      @include span(9 of 12 last);
+      @media only screen and (min-width: 768px) {
+        @include span(9 of 12 last);
+      }
+
+      @media only screen and (max-width: 767px) {
+        padding: 0.5rem;
+      }
     }
 
     &__facts__left {
@@ -38,6 +58,10 @@
     background-color: lighten(#4c6575, 60%);
     margin-top: 50px;
     padding: 15px 0px 50px 0px;
+
+    @media only screen and (max-width: 767px) {
+      padding: 0.5rem;
+    }
 
     &__content {
       @include container(90em);
@@ -59,6 +83,10 @@
     margin-top: 50px;
     padding: 15px 0px 50px 0px;
 
+    @media only screen and (max-width: 767px) {
+      padding: 0.5rem;
+    }
+    
     &__content {
       @include container(90em);
     }

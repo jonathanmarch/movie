@@ -20,7 +20,11 @@
     overflow: hidden;
     position: absolute;
     background-color: white;
-    width: 90em;
+    @media only screen and (min-width: 768px) {
+      width: 90em;
+    }
+    
+    box-shadow: 10px 10px 8px #888888;
   }
 
   &__item {
